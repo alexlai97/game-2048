@@ -5,7 +5,7 @@
 - [x] Random Agent (baseline)
 - [x] Greedy Search with heuristics (5x better than random baseline!)
 - [x] AI runner with batch testing and statistics
-- [ ] Add AI visualization to GUI
+- [x] Add AI visualization to GUI
 - [ ] Minimax with Alpha-Beta pruning
 - [ ] Monte Carlo Tree Search (MCTS)
 - [ ] Expectimax algorithm

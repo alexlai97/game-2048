@@ -34,7 +34,7 @@ This document provides an overview of the AI agents implemented for the 2048 gam
 # Test RandomAgent with 50 games
 2048-ai RandomAgent 50
 
-# Test GreedyAgent with 50 games  
+# Test GreedyAgent with 50 games
 2048-ai GreedyAgent 50
 ```
 

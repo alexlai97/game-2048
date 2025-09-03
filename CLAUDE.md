@@ -29,8 +29,14 @@ Building a 2048 game implementation followed by various AI agents to solve it. T
 # Create virtual environment
 uv venv
 
-# Install dependencies  
+# Install runtime dependencies
 source .venv/bin/activate && uv pip install -r requirements.txt
+
+# Install development dependencies (linting, formatting, type checking)
+source .venv/bin/activate && uv pip install -r requirements-dev.txt
+
+# Install pre-commit hooks for automatic code quality checks
+source .venv/bin/activate && pre-commit install
 ```
 
 ## Testing Commands
@@ -45,7 +51,7 @@ source .venv/bin/activate
 # or: python -m game_2048.terminal
 
 # PySide6 GUI
-source .venv/bin/activate  
+source .venv/bin/activate
 2048-gui
 # or: python -m game_2048.gui
 
@@ -61,6 +67,13 @@ source .venv/bin/activate
 # Run tests
 source .venv/bin/activate
 pytest tests/
+
+# Code Quality Commands
+source .venv/bin/activate
+ruff check game_2048/ --fix          # Lint and auto-fix code issues
+ruff format game_2048/               # Format code with consistent style
+mypy game_2048/                      # Type checking
+pre-commit run --all-files           # Run all quality checks
 ```
 
 ## Implementation Status
@@ -78,7 +91,37 @@ pytest tests/
 - Tree search algorithms
 - Deep learning approaches
 
+✅ **Phase 3: Code Quality Infrastructure (Complete)**
+- Ruff linting and formatting ✅
+- Mypy type checking ✅
+- Pre-commit hooks ✅
+- Black code formatting ✅
+- Development dependencies ✅
+
 ## Dependencies
+
+### Runtime Dependencies
 - numpy>=1.20.0: efficient array operations
+- PySide6>=6.6.0: GUI framework
+- pytest>=6.0.0: testing framework
+
+### Development Dependencies (Code Quality)
+- ruff>=0.12.0: ultra-fast Python linter and formatter
+- black>=25.0.0: opinionated code formatter
+- mypy>=1.17.0: static type checker
+- pre-commit>=4.0.0: git hooks for automated quality checks
+
+### Future Dependencies
 - (future) torch/tensorflow: deep learning
 - (future) matplotlib: visualization
+
+## Code Quality Setup (2025 Best Practices)
+
+This project uses modern Python code quality tools:
+
+- **Ruff**: Replaces Flake8, isort, pyupgrade, and more - 10-100x faster
+- **Black**: Consistent code formatting (88-character line length)
+- **Mypy**: Static type checking with strict configuration
+- **Pre-commit hooks**: Automatic quality checks on every commit
+
+All tools are configured in `pyproject.toml` with compatible settings. Pre-commit hooks automatically run linting, formatting, and basic file quality checks before each commit.

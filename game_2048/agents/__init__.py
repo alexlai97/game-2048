@@ -6,8 +6,8 @@ from simple random agents to sophisticated deep learning models.
 """
 
 from .base import BaseAgent
-from .random import RandomAgent
 from .greedy import GreedyAgent
+from .random import RandomAgent
 from .runner import AIRunner, GameResult
 
 __version__ = "1.0.0"

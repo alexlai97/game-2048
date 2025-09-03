@@ -47,8 +47,9 @@ coverage.xml
 .hypothesis/
 
 # AI test results (keep results directory but ignore temp files)
-*.json
-!results/*.json
+#*.json
+#!results/*.json
+results/
 
 # Serena MCP memories and config
 .serena/

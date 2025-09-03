@@ -54,7 +54,7 @@ game-2048/
 # Human play (terminal)
 2048-terminal
 
-# Human play (GUI)  
+# Human play (GUI)
 2048-gui
 
 # AI testing

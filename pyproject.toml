@@ -28,3 +28,69 @@ python_functions = ["test_*"]
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["game_2048*"]
+
+# Ruff configuration
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+
+[tool.ruff.lint]
+select = [
+    "E",     # pycodestyle errors
+    "W",     # pycodestyle warnings
+    "F",     # pyflakes
+    "UP",    # pyupgrade
+    "C4",    # flake8-comprehensions
+    "B",     # flake8-bugbear
+    "SIM",   # flake8-simplify
+    "I",     # isort
+]
+ignore = [
+    "E501",  # Line too long (Black handles this)
+]
+unfixable = ["B"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E", "W", "B"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+# Black configuration (compatible with Ruff)
+[tool.black]
+line-length = 88
+target-version = ['py39']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+    \.git
+    | \.venv
+    | build
+    | dist
+)/
+'''
+
+# Mypy configuration
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = [
+    "numpy.*",
+    "PySide6.*",
+]
+ignore_missing_imports = true
