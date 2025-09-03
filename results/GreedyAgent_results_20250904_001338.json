@@ -1,0 +1,416 @@
+{
+  "agent_name": "GreedyAgent",
+  "agent_class": "GreedyAgent",
+  "timestamp": "2025-09-04T00:13:38.793861",
+  "total_games": 50,
+  "agent_statistics": {
+    "games_played": 50,
+    "win_rate": 0.0,
+    "average_score": 571.52,
+    "max_score": 1120,
+    "max_tile": 64,
+    "total_score": 28576
+  },
+  "games": [
+    {
+      "score": 556,
+      "moves": 75,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.02395796775817871,
+      "final_state": "lost"
+    },
+    {
+      "score": 680,
+      "moves": 98,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.031529903411865234,
+      "final_state": "lost"
+    },
+    {
+      "score": 668,
+      "moves": 86,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.026437044143676758,
+      "final_state": "lost"
+    },
+    {
+      "score": 272,
+      "moves": 54,
+      "max_tile": 16,
+      "won": false,
+      "duration_seconds": 0.016396045684814453,
+      "final_state": "lost"
+    },
+    {
+      "score": 636,
+      "moves": 85,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.025784969329833984,
+      "final_state": "lost"
+    },
+    {
+      "score": 212,
+      "moves": 47,
+      "max_tile": 16,
+      "won": false,
+      "duration_seconds": 0.014049053192138672,
+      "final_state": "lost"
+    },
+    {
+      "score": 756,
+      "moves": 95,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.028519153594970703,
+      "final_state": "lost"
+    },
+    {
+      "score": 824,
+      "moves": 104,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.032181739807128906,
+      "final_state": "lost"
+    },
+    {
+      "score": 512,
+      "moves": 79,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.024836063385009766,
+      "final_state": "lost"
+    },
+    {
+      "score": 508,
+      "moves": 77,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.022872209548950195,
+      "final_state": "lost"
+    },
+    {
+      "score": 444,
+      "moves": 72,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.021778106689453125,
+      "final_state": "lost"
+    },
+    {
+      "score": 400,
+      "moves": 66,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.019337177276611328,
+      "final_state": "lost"
+    },
+    {
+      "score": 544,
+      "moves": 76,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.022907018661499023,
+      "final_state": "lost"
+    },
+    {
+      "score": 308,
+      "moves": 56,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.016564369201660156,
+      "final_state": "lost"
+    },
+    {
+      "score": 508,
+      "moves": 77,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.0233151912689209,
+      "final_state": "lost"
+    },
+    {
+      "score": 824,
+      "moves": 102,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.030968666076660156,
+      "final_state": "lost"
+    },
+    {
+      "score": 356,
+      "moves": 58,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.01761627197265625,
+      "final_state": "lost"
+    },
+    {
+      "score": 560,
+      "moves": 85,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.026640892028808594,
+      "final_state": "lost"
+    },
+    {
+      "score": 624,
+      "moves": 91,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.02816486358642578,
+      "final_state": "lost"
+    },
+    {
+      "score": 676,
+      "moves": 94,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.02767324447631836,
+      "final_state": "lost"
+    },
+    {
+      "score": 420,
+      "moves": 65,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.019811153411865234,
+      "final_state": "lost"
+    },
+    {
+      "score": 216,
+      "moves": 45,
+      "max_tile": 16,
+      "won": false,
+      "duration_seconds": 0.013576984405517578,
+      "final_state": "lost"
+    },
+    {
+      "score": 416,
+      "moves": 69,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.020387887954711914,
+      "final_state": "lost"
+    },
+    {
+      "score": 904,
+      "moves": 111,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.034009695053100586,
+      "final_state": "lost"
+    },
+    {
+      "score": 456,
+      "moves": 69,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.020078182220458984,
+      "final_state": "lost"
+    },
+    {
+      "score": 580,
+      "moves": 84,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.025442838668823242,
+      "final_state": "lost"
+    },
+    {
+      "score": 464,
+      "moves": 68,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.020796775817871094,
+      "final_state": "lost"
+    },
+    {
+      "score": 408,
+      "moves": 72,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.022470951080322266,
+      "final_state": "lost"
+    },
+    {
+      "score": 400,
+      "moves": 61,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.01829695701599121,
+      "final_state": "lost"
+    },
+    {
+      "score": 596,
+      "moves": 80,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.024215221405029297,
+      "final_state": "lost"
+    },
+    {
+      "score": 776,
+      "moves": 101,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.030752897262573242,
+      "final_state": "lost"
+    },
+    {
+      "score": 664,
+      "moves": 88,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.026647090911865234,
+      "final_state": "lost"
+    },
+    {
+      "score": 236,
+      "moves": 51,
+      "max_tile": 16,
+      "won": false,
+      "duration_seconds": 0.015413999557495117,
+      "final_state": "lost"
+    },
+    {
+      "score": 280,
+      "moves": 52,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.01608419418334961,
+      "final_state": "lost"
+    },
+    {
+      "score": 456,
+      "moves": 71,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.022103071212768555,
+      "final_state": "lost"
+    },
+    {
+      "score": 816,
+      "moves": 111,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.03418278694152832,
+      "final_state": "lost"
+    },
+    {
+      "score": 1120,
+      "moves": 129,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.039331912994384766,
+      "final_state": "lost"
+    },
+    {
+      "score": 508,
+      "moves": 77,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.023625850677490234,
+      "final_state": "lost"
+    },
+    {
+      "score": 1116,
+      "moves": 135,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.04253220558166504,
+      "final_state": "lost"
+    },
+    {
+      "score": 356,
+      "moves": 63,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.15679287910461426,
+      "final_state": "lost"
+    },
+    {
+      "score": 500,
+      "moves": 76,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.0237729549407959,
+      "final_state": "lost"
+    },
+    {
+      "score": 672,
+      "moves": 91,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.028617143630981445,
+      "final_state": "lost"
+    },
+    {
+      "score": 620,
+      "moves": 88,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.02712392807006836,
+      "final_state": "lost"
+    },
+    {
+      "score": 992,
+      "moves": 110,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.03440117835998535,
+      "final_state": "lost"
+    },
+    {
+      "score": 512,
+      "moves": 77,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.023935794830322266,
+      "final_state": "lost"
+    },
+    {
+      "score": 396,
+      "moves": 65,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.01926136016845703,
+      "final_state": "lost"
+    },
+    {
+      "score": 676,
+      "moves": 97,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.03025078773498535,
+      "final_state": "lost"
+    },
+    {
+      "score": 788,
+      "moves": 106,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.03342103958129883,
+      "final_state": "lost"
+    },
+    {
+      "score": 484,
+      "moves": 71,
+      "max_tile": 32,
+      "won": false,
+      "duration_seconds": 0.021607160568237305,
+      "final_state": "lost"
+    },
+    {
+      "score": 880,
+      "moves": 107,
+      "max_tile": 64,
+      "won": false,
+      "duration_seconds": 0.0325770378112793,
+      "final_state": "lost"
+    }
+  ]
+}
