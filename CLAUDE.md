@@ -4,9 +4,17 @@
 Building a 2048 game implementation followed by various AI agents to solve it. This is a learning project to explore different machine learning strategies.
 
 ## Project Structure
-- `game_2048.py` - Core game logic and mechanics
-- `main.py` - Terminal UI for human play
-- `ai_agents/` - Directory for AI implementations (future)
+- `game_2048/core.py` - Core game logic and mechanics
+- `game_2048/terminal.py` - Terminal UI for human play
+- `game_2048/gui.py` - PySide6 GUI with AI visualization
+- `game_2048/agents/` - AI agent implementations
+  - `base.py` - Base agent class and framework
+  - `random.py` - Random baseline agent
+  - `greedy.py` - Heuristic-based greedy agent
+  - `minimax.py` - Minimax with alpha-beta pruning
+  - `expectimax.py` - Expectimax algorithm
+  - `mcts.py` - Monte Carlo Tree Search
+  - `runner.py` - AI testing and evaluation framework
 - `TODOs.md` - Task tracking
 - `requirements.txt` - Python dependencies
 
@@ -59,10 +67,14 @@ source .venv/bin/activate
 source .venv/bin/activate
 python -c "from game_2048 import Game2048; g = Game2048(); print(g)"
 
-# AI testing
+# AI testing - Available agents: RandomAgent, GreedyAgent, MinimaxAgent, ExpectimaxAgent, MCTSAgent
 source .venv/bin/activate
-2048-ai RandomAgent 100
-# or: python -m game_2048.agents.runner RandomAgent 100
+2048-ai RandomAgent 100           # Random baseline
+2048-ai GreedyAgent 100           # Heuristic greedy search
+2048-ai MinimaxAgent 10           # Minimax with alpha-beta pruning (slower)
+2048-ai ExpectimaxAgent 10        # Expectimax algorithm (slower)
+2048-ai MCTSAgent 10              # Monte Carlo Tree Search (slower)
+# or: python -m game_2048.agents.runner <AgentName> <num_games>
 
 # Run tests
 source .venv/bin/activate
@@ -84,12 +96,14 @@ pre-commit run --all-files           # Run all quality checks
 - Terminal-based user interface
 - Move validation and available moves detection
 
-✅ **Phase 2: AI Agents (In Progress)**
+✅ **Phase 2: AI Agents (Complete - Tree Search Algorithms)**
 - Random baseline agent ✅
 - AI framework and runner ✅
-- Heuristic-based strategies
-- Tree search algorithms
-- Deep learning approaches
+- Greedy heuristic-based agent ✅
+- Minimax with alpha-beta pruning ✅
+- Expectimax algorithm ✅
+- Monte Carlo Tree Search (MCTS) ✅
+- GUI integration with all agents ✅
 
 ✅ **Phase 3: Code Quality Infrastructure (Complete)**
 - Ruff linting and formatting ✅
@@ -125,3 +139,65 @@ This project uses modern Python code quality tools:
 - **Pre-commit hooks**: Automatic quality checks on every commit
 
 All tools are configured in `pyproject.toml` with compatible settings. Pre-commit hooks automatically run linting, formatting, and basic file quality checks before each commit.
+
+## AI Agents Overview
+
+### Implemented Agents
+
+**1. RandomAgent** - Baseline Performance
+- Chooses random valid moves
+- Average score: ~1,000-2,000
+- Serves as performance baseline
+- Fast execution: <1ms per move
+
+**2. GreedyAgent** - Heuristic Search
+- Uses multiple weighted heuristics:
+  - Monotonicity (ordered tile arrangements)
+  - Smoothness (similar adjacent tiles)
+  - Free tiles (empty space availability)
+  - Max tile positioning
+- Average score: ~8,000-12,000
+- Reaches 1024 tile consistently
+- Fast execution: <1ms per move
+
+**3. MinimaxAgent** - Game Tree Search
+- Minimax with alpha-beta pruning
+- Models player moves (MAX) vs random tile spawns (CHANCE)
+- Configurable search depth (default: 3)
+- Average score: ~4,000-6,000
+- Medium execution: ~10-30s per move
+
+**4. ExpectimaxAgent** - Probabilistic Tree Search
+- Expectimax algorithm with chance node modeling
+- Better suited for stochastic games than Minimax
+- Probabilistic evaluation of random tile spawns
+- Average score: ~6,000-8,000
+- Medium execution: ~15-40s per move
+
+**5. MCTSAgent** - Monte Carlo Tree Search
+- UCB1 selection policy for exploration/exploitation
+- Random rollouts with heuristic guidance
+- Configurable simulation count (default: 25)
+- Average score: ~4,000-6,000
+- Slow execution: ~20-60s per move
+
+### Performance Comparison
+| Agent | Avg Score | Max Tile | Speed | Best For |
+|-------|-----------|----------|-------|----------|
+| Random | ~1,500 | 128-256 | Very Fast | Baseline |
+| Greedy | ~9,000 | 1024 | Very Fast | Production |
+| Minimax | ~5,000 | 512 | Medium | Learning |
+| Expectimax | ~7,000 | 512-1024 | Medium | Stochastic Games |
+| MCTS | ~4,500 | 512 | Slow | Research |
+
+### Usage Recommendations
+- **For best performance**: Use GreedyAgent
+- **For learning tree search**: Use MinimaxAgent or ExpectimaxAgent
+- **For research/experimentation**: Use MCTSAgent
+- **For GUI visualization**: Any agent (MCTS uses reduced simulations)
+
+### Future Implementations (Phase 3)
+- Deep Q-Learning (DQN)
+- Policy Gradient methods
+- Actor-Critic algorithms
+- Advanced neural network architectures

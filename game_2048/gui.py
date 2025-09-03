@@ -26,7 +26,10 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from .agents.expectimax import ExpectimaxAgent
 from .agents.greedy import GreedyAgent
+from .agents.mcts import MCTSAgent
+from .agents.minimax import MinimaxAgent
 from .agents.random import RandomAgent
 from .core import Game2048
 
@@ -363,7 +366,15 @@ class Game2048PySide6(QMainWindow):
         agent_layout = QHBoxLayout()
         agent_layout.addWidget(QLabel("Agent:"))
         self.agent_combo = QComboBox()
-        self.agent_combo.addItems(["RandomAgent", "GreedyAgent"])
+        self.agent_combo.addItems(
+            [
+                "RandomAgent",
+                "GreedyAgent",
+                "MinimaxAgent",
+                "ExpectimaxAgent",
+                "MCTSAgent",
+            ]
+        )
         self.agent_combo.setEnabled(False)
         self.agent_combo.currentTextChanged.connect(self.on_agent_changed)
         agent_layout.addWidget(self.agent_combo)
@@ -521,6 +532,12 @@ class Game2048PySide6(QMainWindow):
             self.ai_agent = RandomAgent()
         elif agent_name == "GreedyAgent":
             self.ai_agent = GreedyAgent()
+        elif agent_name == "MinimaxAgent":
+            self.ai_agent = MinimaxAgent()
+        elif agent_name == "ExpectimaxAgent":
+            self.ai_agent = ExpectimaxAgent()
+        elif agent_name == "MCTSAgent":
+            self.ai_agent = MCTSAgent(simulations=10)  # Reduced for GUI responsiveness
         else:
             self.ai_agent = None
 

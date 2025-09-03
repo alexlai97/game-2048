@@ -6,6 +6,7 @@ from simple random agents to sophisticated deep learning models.
 """
 
 from .base import BaseAgent
+from .expectimax import ExpectimaxAgent
 from .greedy import GreedyAgent
 from .minimax import MinimaxAgent
 from .random import RandomAgent
@@ -17,6 +18,7 @@ __all__ = [
     "RandomAgent",
     "GreedyAgent",
     "MinimaxAgent",
+    "ExpectimaxAgent",
     "AIRunner",
     "GameResult",
 ]
