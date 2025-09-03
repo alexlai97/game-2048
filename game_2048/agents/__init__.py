@@ -7,8 +7,16 @@ from simple random agents to sophisticated deep learning models.
 
 from .base import BaseAgent
 from .greedy import GreedyAgent
+from .minimax import MinimaxAgent
 from .random import RandomAgent
 from .runner import AIRunner, GameResult
 
 __version__ = "1.0.0"
-__all__ = ["BaseAgent", "RandomAgent", "GreedyAgent", "AIRunner", "GameResult"]
+__all__ = [
+    "BaseAgent",
+    "RandomAgent",
+    "GreedyAgent",
+    "MinimaxAgent",
+    "AIRunner",
+    "GameResult",
+]

@@ -282,9 +282,13 @@ def main():
         from .greedy import GreedyAgent
 
         agent = GreedyAgent()
+    elif agent_name == "MinimaxAgent":
+        from .minimax import MinimaxAgent
+
+        agent = MinimaxAgent()
     else:
         print(f"Unknown agent: {agent_name}")
-        print("Available agents: RandomAgent, GreedyAgent")
+        print("Available agents: RandomAgent, GreedyAgent, MinimaxAgent")
         sys.exit(1)
 
     # Run batch test
