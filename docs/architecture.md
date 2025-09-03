@@ -9,17 +9,22 @@ game-2048/
 ├── game_2048/              # Main game package
 │   ├── core.py            # Game logic and mechanics
 │   ├── terminal.py        # Terminal-based UI
-│   ├── gui.py             # PySide6 GUI interface
-│   └── agents/            # AI agent implementations
-│       ├── base.py        # BaseAgent abstract class
-│       ├── random.py      # RandomAgent implementation
-│       ├── greedy.py      # GreedyAgent with heuristics
-│       └── runner.py      # AI testing and batch runner
+│   ├── gui.py             # PySide6 GUI with AI visualization
+│   ├── agents/            # AI agent implementations
+│   │   ├── base.py        # BaseAgent abstract class
+│   │   ├── random.py      # RandomAgent (baseline)
+│   │   ├── greedy.py      # GreedyAgent (heuristic-based)
+│   │   ├── minimax.py     # MinimaxAgent (tree search)
+│   │   ├── expectimax.py  # ExpectimaxAgent (probabilistic)
+│   │   ├── mcts.py        # MCTSAgent (Monte Carlo Tree Search)
+│   │   └── runner.py      # AI testing and batch runner
+│   └── sounds/            # Audio effects for GUI
 ├── tests/                 # Unit tests for game logic
-├── results/               # AI performance test results (JSON)
-├── docs/                  # Documentation
+├── docs/                  # Architecture documentation
+├── CLAUDE.md             # Complete project documentation
 ├── TODOs.md              # Project roadmap and tasks
-└── requirements.txt       # Python dependencies
+├── requirements.txt       # Runtime dependencies
+└── requirements-dev.txt   # Development dependencies
 ```
 
 ## Core Components
@@ -32,13 +37,18 @@ game-2048/
 
 ### AI Agent Framework (`agents/`)
 - **BaseAgent**: Abstract base class defining the AI interface
+- **Five implemented agents**: Random, Greedy, Minimax, Expectimax, MCTS
 - **Statistics tracking**: Performance metrics and game results
 - **Agent interface**: `get_move(game_state) -> str` method
-- **Utility methods**: Game state copying, move validation
+- **Utility methods**: Game state copying, move validation, batch testing
 
 ### User Interfaces
 - **Terminal UI**: Text-based interface for human play (`terminal.py`)
-- **GUI**: PySide6-based graphical interface (`gui.py`)
+- **GUI**: PySide6-based graphical interface with AI visualization (`gui.py`)
+  - Real-time AI agent play with speed controls
+  - Agent selection dropdown for all 5 AI agents
+  - Move highlighting and sound effects
+  - Performance statistics display
 - **AI Runner**: Command-line tool for batch testing agents (`runner.py`)
 
 ## How AI Agents Work
@@ -57,12 +67,26 @@ game-2048/
 # Human play (GUI)
 2048-gui
 
-# AI testing
+# AI testing - Available agents: RandomAgent, GreedyAgent, MinimaxAgent, ExpectimaxAgent, MCTSAgent
 2048-ai <AgentName> <NumGames>
 ```
 
 ## Dependencies
 
-- **NumPy**: Efficient grid operations
-- **PySide6**: GUI framework
-- **Standard library**: No additional external dependencies for core logic
+### Runtime Dependencies
+- **NumPy**: Efficient grid operations and matrix calculations
+- **PySide6**: Modern GUI framework with AI visualization
+- **Standard library**: Core game logic uses only Python standard library
+
+### Development Dependencies
+- **Ruff**: Ultra-fast Python linter and formatter
+- **Mypy**: Static type checking
+- **Black**: Code formatting
+- **Pre-commit**: Automated code quality checks
+
+## Design Patterns
+
+- **Strategy Pattern**: AI agents implement a common interface (`BaseAgent`)
+- **Observer Pattern**: GUI updates based on game state changes
+- **Factory Pattern**: Agent creation based on string names
+- **Template Method**: Base agent provides common utilities, subclasses implement specific strategies
